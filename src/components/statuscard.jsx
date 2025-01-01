@@ -120,7 +120,7 @@ const StatusCard = () => {
                 marginBottom: 1,
               }}
             >
-              349+
+              249+
             </Typography>
             <Typography
               sx={{
