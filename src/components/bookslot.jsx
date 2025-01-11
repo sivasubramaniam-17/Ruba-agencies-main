@@ -141,7 +141,7 @@ const BookingForm = () => {
               sx={{
                 textAlign: 'center',
                 mb: 4,
-                fontWeight: 'bold',
+                // fontWeight: 'bold',
                 color: '#333',
               }}
             >

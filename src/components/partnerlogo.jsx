@@ -29,6 +29,7 @@ const HomeAppliancesSection = () => {
             fontWeight: 600,
             color: "#6C63FF",
             fontStyle:"italic",
+            
             fontFamily: "'Segoe Script', cursive",
             fontSize: { xs: "1.8rem", sm: "2rem", md: "2.5rem" },
             marginTop:"20px"

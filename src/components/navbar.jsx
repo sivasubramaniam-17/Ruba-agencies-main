@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -15,12 +15,19 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { Link } from "react-router-dom";
 
 const ResponsiveNavBar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navItems = ["Home", "Service", "Articles", "About Us", "Career"];
+  // Define nav items separately with keywords
+  const navItems = [
+    { label: "Home", path: "/", keywords: "home, landing, main" },
+    { label: "About Us", path: "/about-us-nagercoil", keywords: "about, company, us" },
+    { label: "Services", path: "/services", keywords: "services, offerings, solutions" },
+    { label: "Contact", path: "/contact", keywords: "contact, reach us, support" },
+  ];
 
   // Handle scroll event to update navbar style
   useEffect(() => {
@@ -47,16 +54,18 @@ const ResponsiveNavBar = () => {
           top: 0,
           left: 0,
           right: 0,
-          py:isScrolled?
-            "10px" : "10px",
-         
-      
+          py: isScrolled ? "10px" : "10px",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between",      mt: {
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+            mt: {
               xs: isScrolled ? "10px" : "0px", // Apply margin-top adjustment for mobile only
               md: "0px", // No margin-top for medium screens and above
-            } }}>
+            },
+          }}
+        >
           {/* Logo and Title */}
           <Box display="flex" alignItems="center">
             <img
@@ -67,13 +76,15 @@ const ResponsiveNavBar = () => {
             <Box display="flex" flexDirection="column" alignItems="center">
               <Typography
                 variant="h6"
-                
                 sx={{
                   color: "white",
-                  fontWeight: "bold",
+                  fontWeight: 900,
                   textAlign: "center",
                   letterSpacing: "0.5px",
-              
+                 
+            fontStyle:"italic",
+            
+            fontFamily: "'Segoe Script', cursive",
                 }}
               >
                 Ruba Agencies
@@ -99,10 +110,9 @@ const ResponsiveNavBar = () => {
                   variant="subtitle2"
                   sx={{
                     color: "white",
-                    fontStyle: "italic",
+                    // fontStyle: "italic",
                     whiteSpace: "nowrap",
-                    
-                    fontFamily: "'Segoe Script', cursive",
+                    // fontFamily: "'Segoe Script', cursive",
                   }}
                 >
                   Since 2021
@@ -127,29 +137,78 @@ const ResponsiveNavBar = () => {
               gap: 2,
             }}
           >
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                variant="text"
-                sx={{
-                  color: "white",
-                  borderRadius: "20px",
-                  padding: "6px 16px",
-                  "&:hover": {
-                    backgroundColor: "#FFD6B1",
-                    color: "black",
-                  },
-                }}
-              >
-                {item}
-              </Button>
-            ))}
+            {/* Manually setting each nav link */}
+            <Button
+              component={Link} // Use Link for routing
+              to={navItems[0].path}
+              variant="text"
+              sx={{
+                color: "white",
+                borderRadius: "20px",
+                padding: "6px 16px",
+                "&:hover": {
+                  backgroundColor: "#FFD6B1",
+                  color: "black",
+                },
+              }}
+            >
+              {navItems[0].label}
+            </Button>
+            <Button
+              component={Link} // Use Link for routing
+              to={navItems[1].path}
+              variant="text"
+              sx={{
+                color: "white",
+                borderRadius: "20px",
+                padding: "6px 16px",
+                "&:hover": {
+                  backgroundColor: "#FFD6B1",
+                  color: "black",
+                },
+              }}
+            >
+              {navItems[1].label}
+            </Button>
+            <Button
+              component={Link} // Use Link for routing
+              to={navItems[2].path}
+              variant="text"
+              sx={{
+                color: "white",
+                borderRadius: "20px",
+                padding: "6px 16px",
+                "&:hover": {
+                  backgroundColor: "#FFD6B1",
+                  color: "black",
+                },
+              }}
+            >
+              {navItems[2].label}
+            </Button>
+            <Button
+              component={Link} // Use Link for routing
+              to={navItems[3].path}
+              variant="text"
+              sx={{
+                color: "white",
+                borderRadius: "20px",
+                padding: "6px 16px",
+                "&:hover": {
+                  backgroundColor: "#FFD6B1",
+                  color: "black",
+                },
+              }}
+            >
+              {navItems[3].label}
+            </Button>
           </Box>
 
           {/* Call to Action Button */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Button
               variant="contained"
+              
               startIcon={<PhoneIcon />}
               sx={{
                 backgroundColor: "#1975d9",
@@ -198,10 +257,10 @@ const ResponsiveNavBar = () => {
             </Box>
             <List>
               {navItems.map((item) => (
-                <ListItem key={item} disablePadding>
-                  <ListItemButton onClick={() => setDrawerOpen(false)}>
+                <ListItem key={item.label}  disablePadding>
+                  <ListItemButton LinkComponent={Link} to={item.path} onClick={() => setDrawerOpen(false)}>
                     <ListItemText
-                      primary={item}
+                      primary={item.label}
                       primaryTypographyProps={{
                         sx: { fontWeight: "bold", color: "#1975d9" },
                       }}

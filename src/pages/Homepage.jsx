@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ResponsiveNavBar from '../components/navbar';
 import Header from '../components/header';
 import HomeApplianceInstallation from '../components/partnerlogo';

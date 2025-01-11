@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, Card, CardContent } from '@mui/material';
+import  { useState, useEffect } from 'react';
+import { Box, Typography, Button,  } from '@mui/material';
 // import HomeApplianceIcon from '@mui/icons-material/HomeRepairService';
 import CallIcon from '@mui/icons-material/Call';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -53,6 +53,7 @@ const HomeApplianceInstallation = () => {
             color: '#6C63FF',
             fontStyle: 'italic',
             mb: 2,
+            fontWeight: 'bold', 
             fontFamily: "'Segoe Script', cursive",
             fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
           }}

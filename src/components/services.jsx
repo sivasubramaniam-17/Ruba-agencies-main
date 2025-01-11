@@ -163,6 +163,7 @@ const ServicesCard = () => {
     <Box sx={{ p: 4, backgroundColor: 'black' }}>
       <Typography sx={{textAlign:"center",fontSize:{xs:"1.5rem",md:"2rem"}, color: "#6C63FF",
             fontStyle:"italic",
+            fontWeight:"bold",
             fontFamily: "'Segoe Script', cursive",mb:1}}>
         Our Services
       </Typography>
