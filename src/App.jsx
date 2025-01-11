@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';  // Adjust path if necessary
-import AboutPage from './pages/Aboutpage';  //
+import HomePage from './pages/Homepage.jsx';  
+import AboutPage from './pages/Aboutpage';  
 import ServicesPage from './pages/ServicesPage';
 import Contactpage from './pages/Contactpage';
 
