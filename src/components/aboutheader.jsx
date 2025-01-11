@@ -40,6 +40,7 @@ const HeaderComponent = () => {
       sx={{
         textAlign: 'center',
         py: { xs: 20, sm: 14, md: 22 },
+        pt: { xs: 30, sm: 14, md: 22 },
         px: 2,
         position: 'relative',
         overflow: 'hidden',

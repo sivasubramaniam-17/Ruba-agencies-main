@@ -47,7 +47,7 @@ const ResponsiveNavBar = () => {
         position="fixed"
         sx={{
           background: isScrolled
-            ? "linear-gradient(149deg, rgba(66,1,139,1) 0%, rgba(27,152,224,1) 90%)" // Solid background after scroll
+            ? "linear-gradient(45deg, #1a237e 30%, #283593 90%)" // Solid background after scroll
             : "rgba(66,1,139,0)", // Transparent by default
           boxShadow: isScrolled ? "0px 2px 10px rgba(0,0,0,0.8)" : "none",
           transition: "background 0.2s ease-in-out",
@@ -71,7 +71,7 @@ const ResponsiveNavBar = () => {
             <img
               src="logo.png" // Replace with your logo path
               alt="Ruba Agencies Logo"
-              style={{ height: "90px", marginRight: "5px" }}
+              style={{ height: "90px", marginRight:"20px" }}
             />
             <Box display="flex" flexDirection="column" alignItems="center">
               <Typography
@@ -80,7 +80,8 @@ const ResponsiveNavBar = () => {
                   color: "white",
                   fontWeight: 900,
                   textAlign: "center",
-                  letterSpacing: "0.5px",
+                  // letterSpacing: "0.5px"
+                  fontSize:{xs:"18px",sm:"20px",md:"20px"},
                  
             fontStyle:"italic",
             
@@ -234,7 +235,7 @@ const ResponsiveNavBar = () => {
             }}
             onClick={() => setDrawerOpen(true)}
           >
-            <MenuIcon sx={{ fontSize: "2rem", color: "white" }} />
+            <MenuIcon sx={{ fontSize: "1.5rem", color: "white" }} />
           </IconButton>
 
           {/* Drawer for Mobile */}
@@ -252,7 +253,7 @@ const ResponsiveNavBar = () => {
           >
             <Box display="flex" justifyContent="flex-end" mb={2}>
               <IconButton onClick={() => setDrawerOpen(false)}>
-                <CloseIcon sx={{ color: "#1975d9" }} />
+                <CloseIcon sx={{ color: "#1975d9", fontSize: "2rem" }} />
               </IconButton>
             </Box>
             <List>

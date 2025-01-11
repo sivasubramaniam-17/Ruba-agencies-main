@@ -4,11 +4,11 @@ import Header from '../components/header';
 import HomeApplianceInstallation from '../components/partnerlogo';
 
 import Services from '../components/services';
-import AboutSection from '../components/aboutus';
+
 import BookSlot from '../components/bookslot';
-import StatsShowcase from '../components/statusabout';
+
 import MarketingComponent from '../components/marketing';
-import JobSearchComponent from '../components/jobserach';
+
 import HomeApplianceComponent from '../components/whychooseus';
 import StepperComponent from '../components/stepper';
 import Testimonials from '../components/reviews';

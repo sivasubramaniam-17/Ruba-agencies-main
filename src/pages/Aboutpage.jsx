@@ -8,6 +8,7 @@ import BookingForm from "../components/bookslot"
 
 import Footer from "../components/footer"
 import ResponsiveNavBar from "../components/navbar"
+import ScrollingText from "../components/scrollingtext"
 
 
 function Aboutpage() {
@@ -15,6 +16,7 @@ function Aboutpage() {
     <>
     <ResponsiveNavBar/>
     <HeaderComponent/>
+    <ScrollingText/>
     <HomeApplianceComponent/>
     <MissionComponent/>
     <Gallery/>
