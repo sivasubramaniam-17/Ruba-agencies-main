@@ -2,8 +2,7 @@
 import { Box, Typography, Button, Grid } from '@mui/material';
 import TvIcon from '@mui/icons-material/Tv';
 import BuildIcon from '@mui/icons-material/Build';
-import SettingsIcon from '@mui/icons-material/Settings';
-import OpacityIcon from '@mui/icons-material/Opacity';
+
 import ThermostatIcon from '@mui/icons-material/Thermostat';
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import LocalDiningIcon from '@mui/icons-material/LocalDining'; // For dishwashers
@@ -16,7 +15,7 @@ const About = () => {
         <Typography
           variant="h6"
           sx={{ textTransform: 'uppercase', letterSpacing: '2px', mb: 2, fontStyle: 'italic',
-            fontFamily: "'Segoe Script', cursive", fontWeight: 'bold',mb:4 }}
+            fontFamily: "'Segoe Script', cursive", fontWeight: 'bold',marginBottom:4 }}
         >
          Why Choose Us ?
 
