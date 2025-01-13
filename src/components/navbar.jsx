@@ -118,9 +118,10 @@ const ResponsiveNavBar = () => {
                   fontWeight: 900,
                   textAlign: "center",
                   // letterSpacing: "0.5px"
-                  fontSize:{xs:"18px",sm:"20px",md:"20px"},
+                  fontSize:{xs:"16px",sm:"20px",md:"18px"},
                  
             fontStyle:"italic",
+            textTransform: "uppercase",
             
             fontFamily: "'Segoe Script', cursive",
                 }}
