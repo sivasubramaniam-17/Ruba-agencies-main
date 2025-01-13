@@ -20,7 +20,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   marginRight: "8px",
   color: "white",
   "&.Mui-selected": {
-    color: "#6c63ff",
+    color: "#1b247f",
   },
 }));
 
@@ -112,7 +112,7 @@ const HomeApplianceComponent = () => {
               <Typography
                 variant="overline"
                 sx={{
-                  color: "#6c63ff",
+                  color: "#1b247f",
                   fontWeight: "bold",
                   letterSpacing: 2,
                   display: "block",
@@ -168,7 +168,7 @@ const HomeApplianceComponent = () => {
                     >
                       <Typography
                         variant="h6"
-                        sx={{ fontWeight: "bold", color: "#6c63ff" }}
+                        sx={{ fontWeight: "bold", color: "#1b247f" }}
                       >
                         0{index + 1}.
                       </Typography>
@@ -196,7 +196,7 @@ const HomeApplianceComponent = () => {
                     >
                       <Typography
                         variant="h6"
-                        sx={{ fontWeight: "bold", color: "#6c63ff" }}
+                        sx={{ fontWeight: "bold", color: "#1b247f" }}
                       >
                         0{index + 1}.
                       </Typography>
@@ -224,7 +224,7 @@ const HomeApplianceComponent = () => {
                     >
                       <Typography
                         variant="h6"
-                        sx={{ fontWeight: "bold", color: "#6c63ff" }}
+                        sx={{ fontWeight: "bold", color: "#1b247f" }}
                       >
                         0{index + 1}.
                       </Typography>

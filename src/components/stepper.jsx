@@ -52,7 +52,7 @@ const StepperComponent = () => {
     <Box
       sx={{
         backgroundColor: "black",
-        color: "#6C63FF",
+        color: "#1b247f",
         pt: 8,
         pb:1,
       }}
@@ -64,10 +64,11 @@ const StepperComponent = () => {
             fontWeight: "bold",
             mb: 7,
             textAlign: "center",
+            textTransform: "uppercase",
             fontStyle:"italic",
             fontFamily: "'Segoe Script', cursive",
            
-            fontSize: { xs: "1.5rem", md: "2rem" },
+            fontSize: { xs: "1.3rem", md: "1.8rem" },
           }}
         >
           Smooth and Fast Home Appliance Installation Process
@@ -89,8 +90,8 @@ const StepperComponent = () => {
                       position: "absolute",
                       left: "0",
                       top: "0",
-                      border: "2px solid #00A19D",
-                      backgroundColor: "#006D77",
+                      border: "2px solid rgb(19, 70, 238)",
+                      backgroundColor: "#1b247f",
                     }}
                   />
                   {/* Step Content */}

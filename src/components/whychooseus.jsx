@@ -33,7 +33,7 @@ const ProfessionalSocialMediaUI = () => {
           <Typography
             variant="h6"
             sx={{
-              color: "#6C63FF",
+              color: "#1b247f",
               fontWeight: "bold",
               textTransform: "uppercase",
               mb: 1,
@@ -63,6 +63,13 @@ const ProfessionalSocialMediaUI = () => {
               fontSize: "1rem",
               textTransform: "none",
               borderRadius: "50px",
+              transition: "all 0.3s ease-in-out",
+              backgroundColor: (theme) => theme.palette.primary.main,
+              "&:hover": {
+                transform: "scale(1.05)",
+                backgroundColor: (theme) => theme.palette.primary.dark,
+                boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+              }
             }}
           >
             Explore Services

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import emailjs from 'emailjs-com';
-import { CheckCircle, XCircle, Mail } from 'lucide-react';
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import { CheckCircle, XCircle, Mail } from "lucide-react";
 import {
   Box,
   Button,
@@ -10,79 +10,91 @@ import {
   Snackbar,
   Alert,
   Paper,
-} from '@mui/material';
+} from "@mui/material";
 
 const BookingForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [status, setStatus] = useState('idle');
-  const [notification, setNotification] = useState({ show: false, message: '', type: 'success' });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [notification, setNotification] = useState({
+    show: false,
+    message: "",
+    type: "success",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !email || !phone || !date || !time) {
-      setStatus('error');
-      showNotification('Please fill in all fields', 'error');
+      setStatus("error");
+      showNotification("Please fill in all fields", "error");
       return;
     }
 
     const dateRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
     if (!dateRegex.test(date)) {
-      setStatus('error');
-      showNotification('Invalid date format. Use DD/MM/YYYY.', 'error');
+      setStatus("error");
+      showNotification("Invalid date format. Use DD/MM/YYYY.", "error");
       return;
     }
 
     try {
       const emailParams = { name, email, phone, date, time };
 
-      await emailjs.send('service_bxama57', 'template_zoc0x7a', emailParams, 'gCOXhAKT_GlbkeU5o');
-      setStatus('success');
-      showNotification('Your booking was successful!', 'success');
+      await emailjs.send(
+        "service_bxama57",
+        "template_zoc0x7a",
+        emailParams,
+        "gCOXhAKT_GlbkeU5o"
+      );
+      setStatus("success");
+      showNotification("Your booking was successful!", "success");
       resetForm();
     } catch (error) {
-      setStatus('error');
-      showNotification('Something went wrong. Please try again.', 'error');
+      setStatus("error");
+      showNotification("Something went wrong. Please try again.", "error");
     }
   };
 
   const resetForm = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
-    setDate('');
-    setTime('');
+    setName("");
+    setEmail("");
+    setPhone("");
+    setDate("");
+    setTime("");
   };
 
   const showNotification = (message, type) => {
     setNotification({ show: true, message, type });
-    setTimeout(() => setNotification({ show: false, message: '', type: 'success' }), 5000);
+    setTimeout(
+      () => setNotification({ show: false, message: "", type: "success" }),
+      5000
+    );
   };
 
   const ProgressIndicator = () => {
     const getStatusContent = () => {
       switch (status) {
-        case 'success':
+        case "success":
           return {
             icon: <CheckCircle size={64} color="green" />,
-            title: 'Inquiry Received!',
-            message: 'Our team will contact you shortly.',
+            title: "Inquiry Received!",
+            message: "Our team will contact you shortly.",
           };
-        case 'error':
+        case "error":
           return {
             icon: <XCircle size={64} color="red" />,
-            title: 'Something Went Wrong',
-            message: 'Please check the form fields correctly.',
+            title: "Something Went Wrong",
+            message: "Please check the form fields correctly.",
           };
         default:
           return {
             icon: <Mail size={64} color="white" />,
-            title: 'Send Your Inquiry',
-            message: 'Fill out the form to proceed.',
+            title: "Send Your Inquiry",
+            message: "Fill out the form to proceed.",
           };
       }
     };
@@ -92,29 +104,32 @@ const BookingForm = () => {
     return (
       <Box
         sx={{
-          background: 'linear-gradient(to bottom right, #7e57c2, #42a5f5)',
-          p:{xs:6,md:'100px'},
+          background: "linear-gradient(45deg, #1a237e 30%, #283593 90%)",
+          p: { xs: 6, md: "100px" },
           borderRadius: 4,
-          textAlign: 'center',
-          color: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100%',
-          width:'100%',
+          textAlign: "center",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+          width: "100%",
           boxShadow: 6,
-          transition: 'transform 0.3s ease-in-out',
-          '&:hover': {
-            transform: 'scale(1.02)',
+          transition: "transform 0.3s ease-in-out",
+          "&:hover": {
+            transform: "scale(1.02)",
           },
         }}
       >
         {content.icon}
-        <Typography variant="h6" sx={{ mt: 2, fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ mt: 2, fontWeight: "bold" }}>
           {content.title}
         </Typography>
-        <Typography variant="body2" sx={{ mt: 1, color: 'rgba(255, 255, 255, 0.9)' }}>
+        <Typography
+          variant="body2"
+          sx={{ mt: 1, color: "rgba(255, 255, 255, 0.9)" }}
+        >
           {content.message}
         </Typography>
       </Box>
@@ -122,9 +137,14 @@ const BookingForm = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: 'black', py: 6, px: { xs: 2, md: 6 },}}>
-      <Grid container spacing={4} alignItems="center" flexDirection={{xs:"column-reverse",md:"row"}}>
-        <Grid item xs={12} md={4} display="flex" justifyContent="center" >
+    <Box sx={{ bgcolor: "black", py: 6, px: { xs: 2, md: 6 } }}>
+      <Grid
+        container
+        spacing={4}
+        alignItems="center"
+        flexDirection={{ xs: "column-reverse", md: "row" }}
+      >
+        <Grid item xs={12} md={4} display="flex" justifyContent="center">
           <ProgressIndicator />
         </Grid>
         <Grid item xs={12} md={8}>
@@ -132,17 +152,21 @@ const BookingForm = () => {
             sx={{
               p: { xs: 3, md: 6 },
               borderRadius: 4,
-              background: 'linear-gradient(135deg, #ffffff, #f3f4f6)',
+              background: "linear-gradient(135deg, #ffffff, #f3f4f6)",
               boxShadow: 6,
             }}
           >
             <Typography
-              variant="h4"
+              variant="h5"
               sx={{
-                textAlign: 'center',
+                textAlign: "center",
                 mb: 4,
-                // fontWeight: 'bold',
-                color: '#333',
+                fontWeight: 'bold',
+                
+                color: "#1b247f",
+                fontStyle: "italic",
+                textTransform: "uppercase",
+                fontFamily: "'Segoe Script', cursive",
               }}
             >
               Book Your Slot
@@ -159,9 +183,9 @@ const BookingForm = () => {
                     variant="outlined"
                     sx={{
                       borderRadius: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: 'white',
-                        '&:hover': { bgcolor: '#f5f5f5' },
+                      "& .MuiOutlinedInput-root": {
+                        bgcolor: "white",
+                        "&:hover": { bgcolor: "#f5f5f5" },
                       },
                     }}
                   />
@@ -176,9 +200,9 @@ const BookingForm = () => {
                     variant="outlined"
                     sx={{
                       borderRadius: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: 'white',
-                        '&:hover': { bgcolor: '#f5f5f5' },
+                      "& .MuiOutlinedInput-root": {
+                        bgcolor: "white",
+                        "&:hover": { bgcolor: "#f5f5f5" },
                       },
                     }}
                   />
@@ -193,9 +217,9 @@ const BookingForm = () => {
                     variant="outlined"
                     sx={{
                       borderRadius: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: 'white',
-                        '&:hover': { bgcolor: '#f5f5f5' },
+                      "& .MuiOutlinedInput-root": {
+                        bgcolor: "white",
+                        "&:hover": { bgcolor: "#f5f5f5" },
                       },
                     }}
                   />
@@ -209,9 +233,9 @@ const BookingForm = () => {
                     variant="outlined"
                     sx={{
                       borderRadius: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: 'white',
-                        '&:hover': { bgcolor: '#f5f5f5' },
+                      "& .MuiOutlinedInput-root": {
+                        bgcolor: "white",
+                        "&:hover": { bgcolor: "#f5f5f5" },
                       },
                     }}
                   />
@@ -225,9 +249,9 @@ const BookingForm = () => {
                     variant="outlined"
                     sx={{
                       borderRadius: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: 'white',
-                        '&:hover': { bgcolor: '#f5f5f5' },
+                      "& .MuiOutlinedInput-root": {
+                        bgcolor: "white",
+                        "&:hover": { bgcolor: "#f5f5f5" },
                       },
                     }}
                   />
@@ -242,13 +266,13 @@ const BookingForm = () => {
                   mt: 4,
                   borderRadius: 3,
                   py: 1.5,
-                  fontSize: '1rem',
-                  fontWeight: 'bold',
-                  background: 'linear-gradient(to right, #7e57c2, #42a5f5)',
-                  color: 'white',
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  background: "linear-gradient(45deg, #1a237e 30%, #283593 90%)",
+                  color: "white",
                   boxShadow: 4,
-                  '&:hover': {
-                    background: 'linear-gradient(to right, #6a48a3, #3793e5)',
+                  "&:hover": {
+                    background: "linear-gradient(45deg, #1a237e 10%, #283593 50%)",
                   },
                 }}
               >
@@ -264,7 +288,10 @@ const BookingForm = () => {
         autoHideDuration={5000}
         onClose={() => setNotification({ ...notification, show: false })}
       >
-        <Alert severity={notification.type} onClose={() => setNotification({ ...notification, show: false })}>
+        <Alert
+          severity={notification.type}
+          onClose={() => setNotification({ ...notification, show: false })}
+        >
           {notification.message}
         </Alert>
       </Snackbar>

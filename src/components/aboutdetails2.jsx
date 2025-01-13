@@ -42,7 +42,7 @@ const Title = styled(Typography)(({ theme }) => ({
     fontSize: "0.75rem",
     fontWeight: 600,
     letterSpacing: "2px",
-    color: "#6c63ff",
+    color: "#1b247f",
     fontFamily: "'Segoe Script', cursive",
     fontStyle:"italic",
     [theme.breakpoints.down("md")]: {
@@ -75,12 +75,12 @@ const ListItem = styled(Box)(({ theme }) => ({
   alignItems: "flex-start",
   gap: "1rem",
   "&::before": {
-    content: "'✓'",
+    content: "'🛆'",
 
 
     fontSize: "1.5rem",
     fontWeight: 700,
-    color: "#6c63ff",
+    color: "#1b247f",
   },
   "& div": {
     flex: 1,

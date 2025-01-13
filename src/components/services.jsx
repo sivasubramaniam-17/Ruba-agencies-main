@@ -33,7 +33,7 @@ const StyledCard = styled(Card)(({ bgcolor }) => ({
     bottom: 0,
     left: 0,
     right: 0,
-    height: '100%',
+    height: '35%',
     background: bgcolor || '#4facfe', // Use dynamic color or default color
     borderTopLeftRadius: '30px',
     borderTopRightRadius: '30px',
@@ -66,7 +66,7 @@ const IconWrapper = styled(Box)({
   '& svg': {
     width: '100%',
     height: '100%',
-    color: '#6C63FF',
+    color: '#1b247f',
   }
 });
 
@@ -76,8 +76,8 @@ const ServicesCard = () => {
       icon: <RefrigeratorIcon />,
       title: 'Refrigerator Installation',
       keywords: ['Install', 'Maintenance', 'Cooling'],
-      color: '#8B5CF6',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      color: '#1b247f',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Professional refrigerator installation and maintenance services.',
       fullDescription: 'We provide top-notch refrigerator installation and maintenance services to ensure your appliance operates with optimal cooling efficiency and energy savings. Our experts handle everything from setting up your fridge to checking its performance.'
     },
@@ -86,7 +86,7 @@ const ServicesCard = () => {
       title: 'Washing Machine Installation',
       keywords: ['Install', 'Setup', 'Laundry'],
       color: '#F97316',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Expert washing machine installation and setup.',
       fullDescription: 'Our team ensures your washing machine is installed correctly and efficiently, providing a smooth laundry experience. From connecting water lines to ensuring optimal machine performance, we handle it all.'
     },
@@ -95,7 +95,7 @@ const ServicesCard = () => {
       title: 'Microwave Installation',
       keywords: ['Install', 'Appliances', 'Cooking'],
       color: '#14B8A6',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Reliable microwave installation services.',
       fullDescription: 'We offer professional microwave installation services to ensure your appliance is safely and properly installed. Whether you’re upgrading your kitchen or installing a new unit, our experts handle it all.'
     },
@@ -104,7 +104,7 @@ const ServicesCard = () => {
       title: 'TV Installation',
       keywords: ['Mounting', 'Setup', 'Display'],
       color: '#3B82F6',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Expert TV installation and setup for home or office.',
       fullDescription: 'We provide professional TV installation and mounting services, ensuring a perfect display setup for your home theater or office. From wall mounting to cable management, we guarantee a sleek, secure installation.'
     },
@@ -113,7 +113,7 @@ const ServicesCard = () => {
       title: 'AC Installation and Maintenance',
       keywords: ['Cooling', 'AC', 'Maintenance'],
       color: '#2563EB',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Reliable air conditioner installation and servicing.',
       fullDescription: 'Our expert team offers professional air conditioner installation and regular maintenance to ensure optimal cooling performance. We provide everything from setup to annual servicing for your comfort.'
     },
@@ -123,7 +123,7 @@ const ServicesCard = () => {
       title: 'Stabilizer Installation and Maintenance',
       keywords: ['Stabilizer', 'Protection', 'Surge'],
       color: '#F59E0B',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Protect your electronics with professional stabilizer services.',
       fullDescription: 'We provide installation and servicing of voltage stabilizers to protect your electronics from power surges and voltage fluctuations. Keep your devices safe with our reliable stabilizer installation services.'
     },
@@ -132,7 +132,7 @@ const ServicesCard = () => {
       title: 'LED Bulb Installation',
       keywords: ['LED', 'Lighting', 'Energy'],
       color: '#10B981',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Energy-efficient LED bulb installation services.',
       fullDescription: 'We offer energy-efficient LED bulb installation to enhance your home or office lighting while saving on electricity costs. Our experts handle all aspects of LED lighting setup and maintenance.'
     },
@@ -141,7 +141,7 @@ const ServicesCard = () => {
       title: 'Water Purifier Installation',
       keywords: ['Purifier', 'Filtration', 'Water'],
       color: '#14B8A6',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Reliable water purifier installation services.',
       fullDescription: 'We provide installation of water purifiers, ensuring safe, clean drinking water in your home or office. Our experts will install and maintain your water filtration system to provide fresh, purified water.'
     },
@@ -150,7 +150,7 @@ const ServicesCard = () => {
       title: 'Heater Installation and Maintenance',
       keywords: ['Heater', 'Heating', 'Comfort'],
       color: '#EF4444',
-      bgColor: 'linear-gradient(149deg, rgba(66,1,139,0.8) 0%, rgba(27,152,224,0.8) 90%)',
+      bgColor: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
       shortDescription: 'Efficient heater installation for winter comfort.',
       fullDescription: 'Our team provides professional heater installation services to ensure your space stays warm during winter. From electric heaters to gas-based units, we ensure everything is set up safely and efficiently.'
     },
@@ -161,8 +161,9 @@ const ServicesCard = () => {
 
   return (
     <Box sx={{ p: 4, backgroundColor: 'black' }}>
-      <Typography sx={{textAlign:"center",fontSize:{xs:"1.5rem",md:"2rem"}, color: "#6C63FF",
+      <Typography sx={{textAlign:"center",fontSize:{xs:"1.3rem",md:"1.8rem"}, color: "#1b247f",
             fontStyle:"italic",
+            textTransform:"uppercase",
             fontWeight:"bold",
             fontFamily: "'Segoe Script', cursive",mb:1}}>
         Our Services
@@ -215,7 +216,7 @@ const ServicesCard = () => {
                       key={idx}
                       variant="caption"
                       sx={{
-                        color: '#6C63FF',
+                        color: '#1b247f',
                         fontWeight: 500,
                         letterSpacing: '0.05em',
                         fontSize: '0.75rem'

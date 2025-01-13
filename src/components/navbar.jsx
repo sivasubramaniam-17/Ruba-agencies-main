@@ -16,6 +16,43 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Add these animation variants before the component
+const menuVariants = {
+  closed: {
+    x: "-100%",
+    opacity: 0,
+  },
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.43, 0.13, 0.23, 0.96]
+    }
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.43, 0.13, 0.23, 0.96]
+    }
+  }
+};
+
+const menuItemVariants = {
+  closed: { x: -20, opacity: 0 },
+  open: (i) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.4
+    }
+  })
+};
 
 const ResponsiveNavBar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -209,19 +246,49 @@ const ResponsiveNavBar = () => {
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Button
               variant="contained"
-              
               startIcon={<PhoneIcon />}
               sx={{
-                backgroundColor: "#1975d9",
+                backgroundColor: "#1481e1",
                 color: "#FFF",
                 borderRadius: "20px",
                 padding: "6px 16px",
+                position: "relative",
+                transition: "all 0.5s ease-in-out",
+                animation: "pulse 2s infinite",
+                boxShadow: "0 4px 15px rgba(8, 52, 99, 0.67)",
+                
+                "@keyframes pulse": {
+                  "0%": {
+                    boxShadow: "0 0 0 0 rgba(59, 85, 114, 0.73)",
+                  },
+                  "70%": {
+                    boxShadow: "0 0 0 10px rgba(14, 48, 84, 0.4)",
+                  },
+                  "100%": {
+                    boxShadow: "0 0 0 0 rgba(13, 49, 87, 0.32)",
+                  },
+                },
+            
                 "&:hover": {
-                  backgroundColor: "#a905dd",
+                  backgroundColor: "#1b247f",
+                  transform: "translateY(-2px) scale(1.02)",
+                  boxShadow: "0 6px 20px #1b247f",
+                },
+            
+                "&:active": {
+                  transform: "translateY(1px)",
+                },
+            
+                "& .MuiButton-startIcon": {
+                  transition: "transform 0.3s ease",
+                },
+            
+                "&:hover .MuiButton-startIcon": {
+                  transform: "rotate(15deg)",
                 },
               }}
             >
-              Consult With Us
+              Connect With Us
             </Button>
           </Box>
 
@@ -239,57 +306,108 @@ const ResponsiveNavBar = () => {
           </IconButton>
 
           {/* Drawer for Mobile */}
-          <Drawer
-            anchor="left"
-            open={isDrawerOpen}
-            onClose={() => setDrawerOpen(false)}
-            sx={{
-              "& .MuiDrawer-paper": {
-                backgroundColor: "#FFF8F3",
-                width: "250px",
-                padding: 2,
-              },
-            }}
-          >
-            <Box display="flex" justifyContent="flex-end" mb={2}>
-              <IconButton onClick={() => setDrawerOpen(false)}>
-                <CloseIcon sx={{ color: "#1975d9", fontSize: "2rem" }} />
-              </IconButton>
-            </Box>
-            <List>
-              {navItems.map((item) => (
-                <ListItem key={item.label}  disablePadding>
-                  <ListItemButton LinkComponent={Link} to={item.path} onClick={() => setDrawerOpen(false)}>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        sx: { fontWeight: "bold", color: "#1975d9" },
-                      }}
-                    />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-              <ListItem disablePadding>
-                <ListItemButton
-                  sx={{
-                    justifyContent: "center",
-                    mt: 2,
-                    backgroundColor: "#FF8A3D",
-                    borderRadius: "20px",
-                    "&:hover": {
-                      backgroundColor: "#E57300",
-                    },
-                  }}
-                  onClick={() => setDrawerOpen(false)}
-                >
-                  <PhoneIcon sx={{ mr: 1 }} />
-                  <Typography variant="button" color="#FFF">
-                    Consult With Us
-                  </Typography>
-                </ListItemButton>
-              </ListItem>
-            </List>
-          </Drawer>
+          <AnimatePresence>
+            {isDrawerOpen && (
+              <Drawer
+                anchor="left"
+                open={isDrawerOpen}
+                onClose={() => setDrawerOpen(false)}
+                sx={{
+                  '& .MuiDrawer-paper': {
+                    backgroundColor: '#1b247f',
+                    width: '280px',
+                    padding: 3,
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                  },
+                }}
+                PaperProps={{
+                  component: motion.div,
+                  initial: "closed",
+                  animate: "open",
+                  exit: "exit",
+                  variants: menuVariants
+                }}
+              >
+                <Box display="flex" justifyContent="flex-end" mb={3}>
+                  <IconButton
+                    onClick={() => setDrawerOpen(false)}
+                    sx={{
+                      '&:hover': {
+                        transform: 'rotate(90deg)',
+                        transition: 'transform 0.3s ease-in-out',
+                      },
+                    }}
+                  >
+                    <CloseIcon sx={{ color: "#1975d9", fontSize: "2rem" }} />
+                  </IconButton>
+                </Box>
+                <List sx={{ mt: 2 }}>
+                  {navItems.map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      variants={menuItemVariants}
+                      custom={i}
+                    >
+                      <ListItem disablePadding sx={{ mb: 2 }}>
+                        <ListItemButton
+                          LinkComponent={Link}
+                          to={item.path}
+                          onClick={() => setDrawerOpen(false)}
+                          sx={{
+                            borderRadius: '12px',
+                            transition: 'all 0.3s ease',
+                            '&:hover': {
+                              backgroundColor: 'rgba(25, 117, 217, 0.08)',
+                              transform: 'translateX(8px)',
+                            }
+                          }}
+                        >
+                          <ListItemText
+                            primary={item.label}
+                            primaryTypographyProps={{
+                              sx: { 
+                                fontWeight: 300,
+                                color: "white",
+                                fontSize: '1.1rem',
+                              },
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    </motion.div>
+                  ))}
+                  <motion.div
+                    variants={menuItemVariants}
+                    custom={navItems.length}
+                  >
+                    <ListItem disablePadding>
+                      <ListItemButton
+                        sx={{
+                          justifyContent: 'center',
+                          mt: 3,
+                          backgroundColor: '#1481e1',
+                          borderRadius: '16px',
+                          padding: '12px',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            backgroundColor: '#1481e1',
+                            transform: 'translateY(-2px)',
+                            boxShadow: '0 4px 12px rgba(255, 138, 61, 0.3)',
+                          },
+                        }}
+                        onClick={() => setDrawerOpen(false)}
+                      >
+                        <PhoneIcon sx={{ mr: 1 ,color:"white"}} />
+                        <Typography variant="button" color="#FFF" fontWeight="600">
+                          Connect With Us
+                        </Typography>
+                      </ListItemButton>
+                    </ListItem>
+                  </motion.div>
+                </List>
+              </Drawer>
+            )}
+          </AnimatePresence>
         </Toolbar>
       </AppBar>
     </>

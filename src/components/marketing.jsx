@@ -1,5 +1,50 @@
-
 import { Grid, Box, Typography, Button, CircularProgress } from "@mui/material";
+import { useEffect, useState } from 'react';
+import { keyframes } from '@mui/system';
+
+// Define animations
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px) translateX(-50%); }
+  to { opacity: 1; transform: translateY(0) translateX(-50%); }
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+`;
+
+const pulseAnimation = keyframes`
+  0% { transform: scale(1); box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2); }
+  50% { transform: scale(1.02); box-shadow: 0 8px 24px rgba(108, 99, 255, 0.3); }
+  100% { transform: scale(1); box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2); }
+`;
+
+// Counter component
+const AnimatedCounter = ({ value }) => {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const increment = value / steps;
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    
+    return () => clearInterval(timer);
+  }, [value]);
+  
+  return `${count}%`;
+};
 
 export default function InstallationServicesMarketing() {
   return (
@@ -45,6 +90,12 @@ export default function InstallationServicesMarketing() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                animation: `${fadeIn} 1s ease-out`,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  boxShadow: 6,
+                  transform: "translateX(-50%) scale(1.02)",
+                }
               }}
             >
               <CircularProgress
@@ -52,7 +103,10 @@ export default function InstallationServicesMarketing() {
                 value={85}
                 size={80}
                 thickness={4}
-                sx={{ color: "#6C63FF" }}
+                sx={{ 
+                  color: "#1b247f",
+                  animation: `${pulse} 2s infinite ease-in-out`,
+                }}
               />
               <Typography
                 variant="h6"
@@ -62,7 +116,7 @@ export default function InstallationServicesMarketing() {
                   fontWeight: "bold",
                 }}
               >
-                85%
+                <AnimatedCounter value={90} />
               </Typography>
             </Box>
           </Box>
@@ -85,10 +139,11 @@ export default function InstallationServicesMarketing() {
             variant="h4"
             sx={{
               fontWeight: "bold",
-              color: "#6C63FF",
+              color: "#1b247f",
               marginBottom: 2,
-              fontSize:{xs:"1.7rem",md:"2rem"},
+              fontSize:{xs:"1.5rem",md:"1.8rem"},
               fontStyle: 'italic',
+              textTransform: "uppercase",
             
               fontFamily: "'Segoe Script', cursive",
             }}
@@ -125,10 +180,24 @@ export default function InstallationServicesMarketing() {
             variant="contained"
             sx={{
               marginTop: 4,
-              backgroundColor: "#6C63FF",
-              "&:hover": { backgroundColor: "#FB8C00" },
-              padding: "10px 20px",
-              borderRadius: "8px",
+              background: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
+              transition: 'all 0.3s ease-in-out',
+              animation: `${pulseAnimation} 2s infinite`,
+              padding: '8px 20px',
+              borderRadius: '12px',
+              textTransform: 'none',
+              fontSize: '1.1rem',
+              fontWeight: 600,
+              boxShadow: '0 4px 12px rgba(108, 99, 255, 0.2)',
+              '&:hover': {
+                background: 'linear-gradient(45deg, #1a237e 10%, #283593 50%)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 8px 24px rgba(108, 99, 255, 0.3)',
+              },
+              '&:active': {
+                transform: 'translateY(1px)',
+                boxShadow: '0 2px 8px rgba(108, 99, 255, 0.2)',
+              }
             }}
           >
             Schedule an Installation

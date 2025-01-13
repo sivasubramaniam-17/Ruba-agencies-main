@@ -58,7 +58,7 @@ const HeaderComponent = () => {
           left: '-10%',
           width: { xs: '100px', md: '250px' },
           height: { xs: '100px', md: '250px' },
-          backgroundColor: '#a76fd9',
+          backgroundColor: '#1b247f',
           filter: 'blur(100px)',
           borderRadius: '50%',
           animation: 'float1 6s infinite ease-in-out',
@@ -88,7 +88,8 @@ const HeaderComponent = () => {
           fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
           mb: 2,
           px: { xs: 2, sm: 4 }, 
-          color: '#6C63FF',
+          color: '#1b247f',
+          textTransform: 'uppercase',
         
           fontFamily: "'Segoe Script', cursive",
           fontStyle:"italic",// Add padding for smaller screens

@@ -27,11 +27,12 @@ const HomeAppliancesSection = () => {
           component="h1"
           sx={{
             fontWeight: 600,
-            color: "#6C63FF",
+            color: "#1b247f",
             fontStyle:"italic",
+            textTransform: "uppercase",
             
             fontFamily: "'Segoe Script', cursive",
-            fontSize: { xs: "1.8rem", sm: "2rem", md: "2.5rem" },
+            fontSize: { xs: "1.3rem", sm: "2rem", md: "2rem" },
             marginTop:"20px"
           }}
         >
@@ -56,7 +57,7 @@ const HomeAppliancesSection = () => {
       {/* Orange Gradient Box with Logos */}
       <Box
         sx={{
-          background: "linear-gradient(149deg, rgba(66,1,139,1) 0%, rgba(27,152,224,1) 90%)",
+          background: "linear-gradient(45deg, #1a237e 30%, #283593 90%)",
           padding: "50px 40px",
           borderRadius: "12px",
           display: "flex",

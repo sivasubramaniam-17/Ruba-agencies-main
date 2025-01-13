@@ -49,17 +49,18 @@ const Title = styled(Typography)(() => ({
   textAlign: "center",
   fontWeight: 700,
   marginBottom: "12px",
-  fontSize:{xs:"1.8rem",md:"2.5rem"},
-  color: "#6C63FF",
+  fontSize:{xs:"1.3rem",md:"1.8rem"},
+  color: "#1b247f",
   fontStyle: "italic",
+  textTransform: "uppercase",
   fontFamily: "'Segoe Script', cursive",
 }));
 
 const Testimonials = () => {
   return (
     <Box sx={{ backgroundColor: "black", py: 5 }}>
-      <Title variant="h4">What Our Clients Say</Title>
-      <Typography variant="body1" sx={{color:"rgba(255,255,255,0.8)",textAlign:"center"}}>Customer feedback on expert home appliance installation and quality service</Typography>
+      <Title variant="h5">What Our Clients Say</Title>
+      <Typography variant="body2" sx={{color:"rgba(255,255,255,0.8)",textAlign:"center"}}>Customer feedback on expert home appliance installation and quality service</Typography>
       <SwiperContainer>
         <Swiper
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}

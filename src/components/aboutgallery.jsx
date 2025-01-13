@@ -103,12 +103,12 @@ const Carousel = () => {
     >
       {/* Heading Section */}
       <Box sx={{ textAlign: "center", marginBottom: "550px" }}>
-        <Typography variant={isMobile ? "h6" : "h5"} color="white" fontWeight="bold" sx={{color: "#6c63ff",
+        <Typography variant={isMobile ? "h6" : "h5"} color="white" fontWeight="bold" sx={{color: "#1b247f",
     fontFamily: "'Segoe Script', cursive",
-    fontStyle:"italic",}}>
+    fontStyle:"italic",textTransform:"uppercase"}}>
           Expert Home Appliance Installation Services
         </Typography>
-        <Typography variant={isMobile ? "body1" : "h6"} color="white" mt={1}>
+        <Typography variant={isMobile ? "body2" : "body1"} color="white" mt={1}>
           Reliable, professional, and hassle-free installation for your home appliances.
         </Typography>
       </Box>
@@ -166,7 +166,8 @@ const Carousel = () => {
                 color: "white",
               }}
             >
-              <Typography variant={isMobile ? "h6" : "h6"} fontWeight="bold" sx={{color: "#6c63ff",
+              <Typography variant={isMobile ? "h6" : "h6"} fontWeight="bold" sx={{color: "#1b247f",
+              textTransform:"uppercase",
     fontFamily: "'Segoe Script', cursive",
     fontStyle:"italic",}}>
                 {images[currentIndex].heading}

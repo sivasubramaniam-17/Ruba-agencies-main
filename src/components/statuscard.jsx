@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Card, Avatar, AvatarGroup } from '@mui/material';
+import { Box, Typography, Card, Avatar, AvatarGroup, Tooltip } from '@mui/material';
 import { Settings } from 'lucide-react';
 
 const backgroundImages = [
@@ -7,6 +7,34 @@ const backgroundImages = [
   'wm.jpg', // AC installation
   'ht.jpg', // Refrigerator installation
 ];
+
+const tooltipStyles = {
+  '& .MuiTooltip-tooltip': {
+    backgroundColor: 'rgba(0,0,0,0.9)',
+    padding: '8px',
+    borderRadius: '8px',
+    fontSize: '12px',
+    maxWidth: {
+      xs: '200px',
+      sm: '220px'
+    },
+    animation: 'tooltipAnimation 0.3s ease-in-out',
+    '@media (max-width: 600px)': {
+      fontSize: '11px',
+      padding: '6px',
+    }
+  },
+  '@keyframes tooltipAnimation': {
+    '0%': {
+      opacity: 0,
+      transform: 'scale(0.95)',
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'scale(1)',
+    },
+  },
+};
 
 const StatusCard = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -53,7 +81,7 @@ const StatusCard = () => {
               content: '""',
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(149deg, rgba(106,5,114,0.7) 0%, rgba(27,152,224,0.7) 90%)',
+              background: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
               backdropFilter: 'blur(2px)',
               zIndex: 1,
             },
@@ -186,20 +214,58 @@ const StatusCard = () => {
               }}
             >
               {['TV', 'Home theatre', 'Air conditioner', 'Washing Machine'].map((service) => (
-                <Box
+                <Tooltip
                   key={service}
-                  sx={{
-                    background: 'black',
-                    borderRadius: '12px',
-                    padding: 2,
-                    textAlign: 'center',
-                    color: '#2563eb',
-                    fontSize: { xs: '0.75rem', sm: '0.875rem' },
-                    fontWeight: 500,
+                  title={
+                    <div>
+                      <h4 style={{ margin: '0 0 4px 0', fontSize: '13px' }}>{service}</h4>
+                      <p style={{ margin: 0, fontSize: '11px' }}>
+                        {service === 'TV' && 'Expert TV repair and installation services'}
+                        {service === 'Home theatre' && 'Complete home theatre setup and maintenance'}
+                        {service === 'Air conditioner' && 'AC installation, repair, and servicing'}
+                        {service === 'Washing Machine' && 'Professional washing machine repair services'}
+                      </p>
+                    </div>
+                  }
+                  arrow
+                  placement="top"
+                  enterTouchDelay={50}
+                  leaveTouchDelay={2000}
+                  PopperProps={{
+                    modifiers: [{
+                      name: 'offset',
+                      options: {
+                        offset: [0, -8],
+                      },
+                    }],
                   }}
+                  sx={tooltipStyles}
                 >
-                  {service}
-                </Box>
+                  <Box
+                    sx={{
+                      background: 'black',
+                      borderRadius: '12px',
+                      padding: { xs: 1.5, sm: 2 },
+                      textAlign: 'center',
+                      color: '#2563eb',
+                      fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      WebkitTapHighlightColor: 'transparent',
+                      '&:active': {
+                        transform: 'scale(0.98)',
+                      },
+                      '@media (hover: hover)': {
+                        '&:hover': {
+                          transform: 'translateY(-3px)',
+                          boxShadow: '0 4px 8px rgba(37, 99, 235, 0.2)',
+                        }
+                      }
+                    }}
+                  >
+                    {service}
+                  </Box>
+                </Tooltip>
               ))}
             </Box>
           </Box>

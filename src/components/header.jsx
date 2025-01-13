@@ -50,12 +50,51 @@ const HomeApplianceInstallation = () => {
         <Typography
           variant="h4"
           sx={{
-            color: '#6C63FF',
+            position: 'relative',
+            background: 'linear-gradient(45deg, #1b247f, #4052ee, #1b247f)',
+            backgroundSize: '200% 200%',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            animation: 'gradient 3s ease infinite, float 3s ease-in-out infinite',
             fontStyle: 'italic',
             mb: 2,
-            fontWeight: 'bold', 
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
             fontFamily: "'Segoe Script', cursive",
-            fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
+            fontSize: { xs: '1.3rem', sm: '1.5rem', md: '1.8rem' },
+            textShadow: '2px 2px 4px rgba(27, 36, 127, 0.15)',
+            transition: 'all 0.3s ease',
+            letterSpacing: '2px',
+            
+            '@keyframes gradient': {
+              '0%': {
+                backgroundPosition: '0% 50%'
+              },
+              '50%': {
+                backgroundPosition: '100% 50%'
+              },
+              '100%': {
+                backgroundPosition: '0% 50%'
+              }
+            },
+            
+            '@keyframes float': {
+              '0%': {
+                transform: 'translateY(0px)'
+              },
+              '50%': {
+                transform: 'translateY(-5px)'
+              },
+              '100%': {
+                transform: 'translateY(0px)'
+              }
+            },
+
+            '&:hover': {
+              letterSpacing: '3px',
+              transform: 'scale(1.02)',
+            }
           }}
         >
           We Provide...
