@@ -59,6 +59,7 @@ const StepperComponent = () => {
     >
       <Container maxWidth="md">
         <Typography
+         className="component"
           variant="h4"
           sx={{
             fontWeight: "bold",
@@ -78,11 +79,12 @@ const StepperComponent = () => {
           <Grid item xs={12}>
             <Box sx={{ position: "relative" }}>
               {/* Vertical Line */}
-              <VerticalLine />
+              <VerticalLine  className="component" />
               {steps.map((step, index) => (
                 <StepContainer key={step.id}>
                   {/* Step Icon */}
                   <Avatar
+                   className="component"
                     src={step.icon}
                     sx={{
                       width: "48px",
@@ -95,7 +97,7 @@ const StepperComponent = () => {
                     }}
                   />
                   {/* Step Content */}
-                  <Box>
+                  <Box  className="component">
                     <Typography
                       variant="h6"
                       sx={{

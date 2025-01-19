@@ -1,8 +1,8 @@
-import React from 'react';
+
 import { Box, Typography, Avatar, Rating } from '@mui/material';
 import { motion } from 'framer-motion';
 
-const ServiceHeader = () => {
+const ContactHeader = () => {
   const keyframesFloat1 = `
     @keyframes float1 {
       0% {
@@ -96,7 +96,7 @@ const ServiceHeader = () => {
           fontStyle:"italic",// Add padding for smaller screens
         }}
       >
-        Our Services
+        Contact Us
       </Typography>
 
       {/* Subheading */}
@@ -111,7 +111,7 @@ const ServiceHeader = () => {
           px: { xs: 2, sm: 4 }, // Add padding for smaller screens
         }}
       >
-         Expert installation of washing machines, refrigerators, dishwashers, and all major home appliances. Licensed technicians serving you and with same-day service.
+         Connect with us for a seamless experience and exceptional service. We are here to help you.
       </Typography>
 
       {/* Ratings Section */}
@@ -176,4 +176,4 @@ const ServiceHeader = () => {
   );
 };
 
-export default ServiceHeader;
+export default ContactHeader;

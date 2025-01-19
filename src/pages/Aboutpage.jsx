@@ -9,9 +9,11 @@ import BookingForm from "../components/bookslot"
 import Footer from "../components/footer"
 import ResponsiveNavBar from "../components/navbar"
 import ScrollingText from "../components/scrollingtext"
+import useScrollTransition from "../useScrollTransition"
 
 
 function Aboutpage() {
+  useScrollTransition()
   return (
     <>
     <ResponsiveNavBar/>

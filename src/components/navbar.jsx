@@ -61,9 +61,9 @@ const ResponsiveNavBar = () => {
   // Define nav items separately with keywords
   const navItems = [
     { label: "Home", path: "/", keywords: "home, landing, main" },
-    { label: "About Us", path: "/about-us-nagercoil", keywords: "about, company, us" },
-    { label: "Services", path: "/services", keywords: "services, offerings, solutions" },
-    { label: "Contact", path: "/contact", keywords: "contact, reach us, support" },
+    { label: "About Us", path: "/about-us-nagercoil-home-appliance-installation", keywords: "about, company, us" },
+    { label: "Services", path: "/home-appliance-installation-services-nagercoil", keywords: "services, offerings, solutions" },
+    { label: "Contact", path: "/contact-home-appliance-installation-nagercoil", keywords: "contact, reach us, support" },
   ];
 
   // Handle scroll event to update navbar style
@@ -186,8 +186,9 @@ const ResponsiveNavBar = () => {
                 borderRadius: "20px",
                 padding: "6px 16px",
                 "&:hover": {
-                  backgroundColor: "#FFD6B1",
-                  color: "black",
+                  backgroundColor: "#1b247f",
+                  color: "white",
+                  transition: "all 0.3s ease",
                 },
               }}
             >
@@ -202,8 +203,9 @@ const ResponsiveNavBar = () => {
                 borderRadius: "20px",
                 padding: "6px 16px",
                 "&:hover": {
-                  backgroundColor: "#FFD6B1",
-                  color: "black",
+                  backgroundColor: "#1b247f",
+                  color: "white",
+                  transition: "all 0.3s ease",
                 },
               }}
             >
@@ -218,8 +220,9 @@ const ResponsiveNavBar = () => {
                 borderRadius: "20px",
                 padding: "6px 16px",
                 "&:hover": {
-                  backgroundColor: "#FFD6B1",
-                  color: "black",
+                  backgroundColor: "#1b247f",
+                  color: "white",
+                  transition: "all 0.3s ease",
                 },
               }}
             >
@@ -234,8 +237,9 @@ const ResponsiveNavBar = () => {
                 borderRadius: "20px",
                 padding: "6px 16px",
                 "&:hover": {
-                  backgroundColor: "#FFD6B1",
-                  color: "black",
+                  backgroundColor: "#1b247f",
+                  color: "white",
+                  transition: "all 0.3s ease",
                 },
               }}
             >

@@ -105,10 +105,10 @@ const Carousel = () => {
       <Box sx={{ textAlign: "center", marginBottom: "550px" }}>
         <Typography variant={isMobile ? "h6" : "h5"} color="white" fontWeight="bold" sx={{color: "#1b247f",
     fontFamily: "'Segoe Script', cursive",
-    fontStyle:"italic",textTransform:"uppercase"}}>
+    fontStyle:"italic",textTransform:"uppercase"}}  className="component">
           Expert Home Appliance Installation Services
         </Typography>
-        <Typography variant={isMobile ? "body2" : "body1"} color="white" mt={1}>
+        <Typography variant={isMobile ? "body2" : "body1"} color="white" mt={1}  className="component">
           Reliable, professional, and hassle-free installation for your home appliances.
         </Typography>
       </Box>
@@ -132,6 +132,7 @@ const Carousel = () => {
           }}
         >
           <Box
+           className="component"
             sx={{
               position: "relative",
               width: "100%",

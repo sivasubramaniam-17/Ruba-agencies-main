@@ -75,7 +75,7 @@ const ListItem = styled(Box)(({ theme }) => ({
   alignItems: "flex-start",
   gap: "1rem",
   "&::before": {
-    content: "'🛆'",
+    content: "'*'",
 
 
     fontSize: "1.5rem",
@@ -104,7 +104,7 @@ const MissionSection = () => {
   return (
     <Wrapper>
       {/* Left Content */}
-      <ContentWrapper>
+      <ContentWrapper  className="component">
         <Title>
           We help people install and maintain home appliances seamlessly.
         </Title>
@@ -115,7 +115,7 @@ const MissionSection = () => {
         </Description>
 
         {/* List Items */}
-        <ListWrapper>
+        <ListWrapper  className="component">
           <ListItem>
             <Box>
               <Typography variant="h6" sx={{ fontWeight: 700, color: "white" }}>
@@ -153,7 +153,7 @@ const MissionSection = () => {
       </ContentWrapper>
 
       {/* Right Image */}
-      <ImageWrapper>
+      <ImageWrapper  className="component">
         <img
           src="tv.jpg"
           alt="Professional technician providing appliance installation"

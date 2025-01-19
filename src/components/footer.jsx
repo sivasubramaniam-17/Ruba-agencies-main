@@ -42,6 +42,12 @@ const Footer = () => {
                   fontWeight: "bold",
                   textAlign: "center",
                   letterSpacing: "0.5px",
+                  fontSize:{xs:"16px",sm:"20px",md:"18px"},
+                 
+            fontStyle:"italic",
+            textTransform: "uppercase",
+            
+            fontFamily: "'Segoe Script', cursive",
               
                 }}
               >
@@ -71,7 +77,6 @@ const Footer = () => {
                     fontStyle: "italic",
                     whiteSpace: "nowrap",
                     
-                    fontFamily: "'Segoe Script', cursive",
                   }}
                 >
                   Since 2021
@@ -102,7 +107,7 @@ const Footer = () => {
               Contact Us
             </Typography>
             <Typography variant="body2" color="rgba(255,255,255,0.8)" sx={{ mb: 1 }}>
-              Email: rubaagencies@gmail.com
+              Email: rubaagencies72@gmail.com
             </Typography>
             <Typography variant="body2" color="rgba(255,255,255,0.8)" sx={{ mb: 2 }}>
               Phone: +91 6379440442

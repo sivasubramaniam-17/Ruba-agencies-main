@@ -103,6 +103,7 @@ const BookingForm = () => {
 
     return (
       <Box
+       className="component"
         sx={{
           background: "linear-gradient(45deg, #1a237e 30%, #283593 90%)",
           p: { xs: 6, md: "100px" },
@@ -147,7 +148,7 @@ const BookingForm = () => {
         <Grid item xs={12} md={4} display="flex" justifyContent="center">
           <ProgressIndicator />
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8}  className="component">
           <Paper
             sx={{
               p: { xs: 3, md: 6 },

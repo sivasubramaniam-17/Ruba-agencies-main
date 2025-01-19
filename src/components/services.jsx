@@ -161,22 +161,24 @@ const ServicesCard = () => {
 
   return (
     <Box sx={{ p: 4, backgroundColor: 'black' }}>
-      <Typography sx={{textAlign:"center",fontSize:{xs:"1.3rem",md:"1.8rem"}, color: "#1b247f",
+      <Typography  className="component" sx={{textAlign:"center",fontSize:{xs:"1.3rem",md:"1.8rem"}, color: "#1b247f",
             fontStyle:"italic",
             textTransform:"uppercase",
             fontWeight:"bold",
             fontFamily: "'Segoe Script', cursive",mb:1}}>
         Our Services
       </Typography>
-      <Typography sx={{textAlign:"center",color:"rgba(255,255,255,0.8)"}}>
+      <Typography sx={{textAlign:"center",color:"rgba(255,255,255,0.8)"}}  className="component">
       Professional installation and maintenance for all household appliances and systems.
       </Typography>
       <Grid container spacing={4} justifyContent="center" mt={"20px"}>
         {services.map((service, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <StyledCard bgcolor={service.bgColor}>
+            <StyledCard bgcolor={service.bgColor}  className="component">
               {/* Top Content */}
-              <Box sx={{
+              <Box
+               className="component"
+               sx={{
                 position: 'relative',
                 zIndex: 2,
                 padding: '0 24px',

@@ -13,10 +13,12 @@ import HomeApplianceComponent from '../components/whychooseus';
 import StepperComponent from '../components/stepper';
 import Testimonials from '../components/reviews';
 import Footer from '../components/footer';
+import useScrollTransition from '../useScrollTransition';
 
 
 
 const HomePage = () => {
+  useScrollTransition()
   return (
     <>
    <ResponsiveNavBar/>

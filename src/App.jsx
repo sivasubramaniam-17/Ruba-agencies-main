@@ -3,15 +3,17 @@ import HomePage from './pages/Homepage.jsx';
 import AboutPage from './pages/Aboutpage';  
 import ServicesPage from './pages/ServicesPage';
 import Contactpage from './pages/Contactpage';
+import ScrollToTop from './components/Scrolltotop.jsx';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about-us-nagercoil" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage/>} />
-        <Route path="/contact" element={<Contactpage />} />
+      <Route path="/" element={<HomePage />} />
+        <Route path="/about-us-nagercoil-home-appliance-installation" element={<AboutPage />} />
+        <Route path="/home-appliance-installation-services-nagercoil" element={<ServicesPage />} />
+        <Route path="/contact-home-appliance-installation-nagercoil" element={<Contactpage />} />
       </Routes>
     </Router>
   );

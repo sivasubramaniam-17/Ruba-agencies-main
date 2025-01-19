@@ -59,9 +59,9 @@ const Title = styled(Typography)(() => ({
 const Testimonials = () => {
   return (
     <Box sx={{ backgroundColor: "black", py: 5 }}>
-      <Title variant="h5">What Our Clients Say</Title>
-      <Typography variant="body2" sx={{color:"rgba(255,255,255,0.8)",textAlign:"center"}}>Customer feedback on expert home appliance installation and quality service</Typography>
-      <SwiperContainer>
+      <Title variant="h5"  className="component">What Our Clients Say</Title>
+      <Typography  className="component" variant="body2" sx={{color:"rgba(255,255,255,0.8)",textAlign:"center"}}>Customer feedback on expert home appliance installation and quality service</Typography>
+      <SwiperContainer  className="component">
         <Swiper
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
           effect="coverflow"
@@ -93,6 +93,7 @@ const Testimonials = () => {
           <SwiperSlide>
             {({ isActive }) => (
               <TestimonialCard
+              
                 sx={{
                   opacity: isActive ? 1 : 0.5, // Fully visible for active, dimmed for others
                 }}

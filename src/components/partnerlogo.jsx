@@ -25,6 +25,7 @@ const HomeAppliancesSection = () => {
         <Typography
           variant="h4"
           component="h1"
+          className="component"
           sx={{
             fontWeight: 600,
             color: "#1b247f",
@@ -41,6 +42,7 @@ const HomeAppliancesSection = () => {
         <Typography
           variant="body1"
           component="p"
+           className="component"
           sx={{
             color: "white",
             fontSize: { xs: "0.8rem", sm: "1rem", md: "1rem" },
@@ -56,6 +58,7 @@ const HomeAppliancesSection = () => {
       </Box>
       {/* Orange Gradient Box with Logos */}
       <Box
+       className="component"
         sx={{
           background: "linear-gradient(45deg, #1a237e 30%, #283593 90%)",
           padding: "50px 40px",

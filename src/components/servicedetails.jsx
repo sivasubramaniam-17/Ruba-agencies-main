@@ -35,6 +35,7 @@ const ServiceStepper = () => {
         {/* Header */}
         <Box sx={{ mb: { xs: 5, md: 8 } ,color:"white"}} >
           <Typography 
+           className="component"
             variant="h1" 
             sx={{
               fontSize: { xs: '1.3rem', sm: '2rem', md: '2rem' },
@@ -70,6 +71,7 @@ const ServiceStepper = () => {
         }}>
           {steps.map((step, index) => (
             <Box
+             className="component"
               key={step.number}
               sx={{
                 display: 'flex',
@@ -83,7 +85,9 @@ const ServiceStepper = () => {
               }}
             >
               {/* Step Number Circle */}
-              <Box sx={{
+              <Box
+               
+               sx={{
                 position: { xs: 'static', md: 'absolute' },
                 left: { md: '50%' },
                 transform: { md: 'translateX(-50%)' },
@@ -118,7 +122,9 @@ const ServiceStepper = () => {
                 // mb: { xs: 0.2, md: 0 },
                 order: { xs: 2, md: 0 }
               }}>
-                <Typography sx={{
+                <Typography
+                 className="component"
+                 sx={{
                   fontSize: { xs: '1.25rem', md: '1.5rem' },
                   fontWeight: 600,
                   mb: { xs: 1, md: 2 },
@@ -134,7 +140,7 @@ const ServiceStepper = () => {
                   color: 'white',
                   lineHeight: 1.6,
                   mx: { xs: 2, md: 0 }
-                }}>
+                }}  className="component">
                   {step.description}
                 </Typography>
               </Box>
@@ -146,6 +152,7 @@ const ServiceStepper = () => {
                 mb: { xs: 3, md: 0 }
               }}>
                 <Box 
+                 className="component"
                   component="img"
                   src={step.image}
                   alt={step.title}

@@ -83,6 +83,7 @@ const HeaderComponent = () => {
       <Typography
         variant="h2"
         component="h1"
+         className="component"
         sx={{
           fontWeight: 'bold',
           fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
@@ -101,6 +102,7 @@ const HeaderComponent = () => {
       {/* Subheading */}
       <Typography
         variant="body1"
+         className="component"
         sx={{
           fontSize: { xs: '1rem', sm: '1rem', md: '1rem' },
           maxWidth: '600px',
@@ -115,6 +117,7 @@ const HeaderComponent = () => {
 
       {/* Ratings Section */}
       <Box
+       className="component"
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' }, // Stack vertically on small screens
@@ -162,10 +165,10 @@ const HeaderComponent = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: { xs: '0.8rem', sm: '1rem' },
+            fontSize: { xs: '0.6rem', sm: '0.8rem' },
           }}
         >
-          2K+
+          200+
         </Box>
       </Box>
     </Box>

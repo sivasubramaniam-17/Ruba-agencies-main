@@ -29,8 +29,9 @@ const ProfessionalSocialMediaUI = () => {
     >
       <Grid container spacing={4} alignItems="center">
         {/* Left Section */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6}  className="component">
           <Typography
+          
             variant="h6"
             sx={{
               color: "#1b247f",
@@ -77,7 +78,7 @@ const ProfessionalSocialMediaUI = () => {
         </Grid>
 
         {/* Right Section */}
-        <Grid item xs={12} md={6} sx={{ position: "relative" }}>
+        <Grid item xs={12} md={6} sx={{ position: "relative" }}  className="component">
           {/* Background Image with Overlay */}
           <Box
             sx={{

@@ -25,6 +25,7 @@ const HomeApplianceInstallation = () => {
 
   return (
     <Box
+    className="component"
       sx={{
         position: 'relative',
         display: 'flex',
@@ -159,45 +160,50 @@ const HomeApplianceInstallation = () => {
         </Typography>
 
         <Box
-          display="flex"
-          gap={2}
-          sx={{
-            flexDirection: { xs: 'column', sm: 'row' },
-            width: { xs: '100%', sm: 'auto' },
-            alignItems:"center"
-          }}
-        >
-          <Button
-            variant="contained"
-            startIcon={<CallIcon />}
-            sx={{
-              backgroundColor: '#FF8A3D',
-              '&:hover': { backgroundColor: '#E57300' },
-              padding: { xs: '10px 16px', md: '7px 15px' },
-              fontSize: { xs: '0.7rem', md: '0.75rem' },
-              borderRadius: '30px',
-              boxShadow: 2,
-              width: { xs: '50%', sm: 'auto' },
-            }}
-          >
-            Call Now
-          </Button>
-          <Button
-            variant="contained"
-            startIcon={<WhatsAppIcon />}
-            sx={{
-              backgroundColor: '#25D366',
-              '&:hover': { backgroundColor: '#1DA851' },
-              padding: { xs: '10px 16px', md: '7px 15px' },
-              fontSize: { xs: '0.7rem', md: '0.75rem' },
-              borderRadius: '30px',
-              boxShadow: 2,
-              width: { xs: '50%', sm: 'auto' },
-            }}
-          >
-            WhatsApp Now
-          </Button>
-        </Box>
+      display="flex"
+      gap={2}
+      sx={{
+        flexDirection: { xs: 'column', sm: 'row' },
+        width: { xs: '100%', sm: 'auto' },
+        alignItems: 'center',
+      }}
+    >
+      {/* Call Now Button */}
+      <Button
+        variant="contained"
+        startIcon={<CallIcon />}
+        sx={{
+          backgroundColor: '#FF8A3D',
+          '&:hover': { backgroundColor: '#E57300' },
+          padding: { xs: '10px 16px', md: '7px 15px' },
+          fontSize: { xs: '0.7rem', md: '0.75rem' },
+          borderRadius: '30px',
+          boxShadow: 2,
+          width: { xs: '50%', sm: 'auto' },
+        }}
+        onClick={() => window.location.href = 'tel:+916379440442'}  // Replace with your phone number
+      >
+        Call Now
+      </Button>
+
+      {/* WhatsApp Now Button */}
+      <Button
+        variant="contained"
+        startIcon={<WhatsAppIcon />}
+        sx={{
+          backgroundColor: '#25D366',
+          '&:hover': { backgroundColor: '#1DA851' },
+          padding: { xs: '10px 16px', md: '7px 15px' },
+          fontSize: { xs: '0.7rem', md: '0.75rem' },
+          borderRadius: '30px',
+          boxShadow: 2,
+          width: { xs: '50%', sm: 'auto' },
+        }}
+        onClick={() => window.location.href = 'https://wa.me/6379440442'}  // Replace with your WhatsApp number
+      >
+        WhatsApp Now
+      </Button>
+    </Box>
       </Box>
 
      <AnimatedStatsComponent/>

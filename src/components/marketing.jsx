@@ -60,7 +60,7 @@ export default function InstallationServicesMarketing() {
       <Grid container spacing={4} alignItems="center" sx={{ display:"flex",
         flexDirection:{xs:"column-reverse",md:"row"}}}>
         {/* Left Side (Image and Stats) */}
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={5}  className="component">
           <Box sx={{ position: "relative", textAlign: "center" }}>
             {/* Profile Image */}
             <Box
@@ -76,6 +76,7 @@ export default function InstallationServicesMarketing() {
             />
             {/* Stats Box */}
             <Box
+           
               sx={{
                 position: "absolute",
                 bottom: "-15px",
@@ -137,6 +138,7 @@ export default function InstallationServicesMarketing() {
         <Grid item xs={12} md={7}>
           <Typography
             variant="h4"
+             className="component"
             sx={{
               fontWeight: "bold",
               color: "#1b247f",
@@ -151,6 +153,7 @@ export default function InstallationServicesMarketing() {
             Professional Home Appliance Installation Services
           </Typography>
           <Typography
+           className="component"
             variant="body1"
             sx={{
               color: "white",
@@ -160,24 +163,25 @@ export default function InstallationServicesMarketing() {
             Our expert installation services ensure your home appliances, including TVs, washing machines, refrigerators, air conditioners, and home theatre systems, are set up quickly and correctly. Get reliable, efficient, and safe installation from certified professionals....
           </Typography>
           <Box component="ul" sx={{ paddingLeft: 2, color: "white" }}>
-            <Typography component="li" sx={{ marginBottom: 1.5 }}>
+            <Typography component="li" sx={{ marginBottom: 1.5 }}  className="component">
               TV mounting and installation with cable management for a clean look
             </Typography>
-            <Typography component="li" sx={{ marginBottom: 1.5 }}>
+            <Typography component="li" sx={{ marginBottom: 1.5 }}  className="component">
               Washing machine setup and testing to ensure optimal performance
             </Typography>
-            <Typography component="li" sx={{ marginBottom: 1.5 }}>
+            <Typography component="li" sx={{ marginBottom: 1.5 }}  className="component">
               Refrigerator installation with energy-saving tips and maintenance advice
             </Typography>
-            <Typography component="li" sx={{ marginBottom: 1.5 }}>
+            <Typography component="li" sx={{ marginBottom: 1.5 }}  className="component">
               Air conditioning unit installation with smart thermostat integration
             </Typography>
-            <Typography component="li" sx={{ marginBottom: 1.5 }}>
+            <Typography component="li" sx={{ marginBottom: 1.5 }}  className="component">
               Home theatre system setup with surround sound calibration
             </Typography>
           </Box>
           <Button
             variant="contained"
+             className="component"
             sx={{
               marginTop: 4,
               background: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',

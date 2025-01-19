@@ -47,11 +47,11 @@ const TopImage = styled("img")(({ theme }) => ({
   borderRadius: "12px",
   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
   objectFit: "cover",
-  top: "10%",
+  top: "15%",
   left: "10%",
   zIndex: 2,
   [theme.breakpoints.up("lg")]: {
-    top: "20%",
+    top: "5%",
   },
 }));
 
@@ -66,7 +66,7 @@ const BottomImage = styled("img")(({ theme }) => ({
   right: "10%",
   zIndex: 1,
   [theme.breakpoints.up("lg")]: {
-    bottom: "0%",
+    bottom: "-10%",
   },
 }));
 
@@ -104,12 +104,13 @@ const HomeApplianceComponent = () => {
 
   return (
     <Container maxWidth="xl" sx={{ backgroundColor: "black" }}>
-      <Box sx={{ py: { xs: 4, md: 8 } }}>
+      <Box sx={{ py: { xs: 4, md: 8 } }}  className="component">
         <Grid container spacing={4}>
           {/* Left Section */}
           <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
             <Box sx={{ mb: 4 }}>
               <Typography
+              
                 variant="overline"
                 sx={{
                   color: "#1b247f",
@@ -240,6 +241,7 @@ const HomeApplianceComponent = () => {
 
           {/* Right Section */}
           <Grid
+           className="component"
             item
             xs={12}
             md={6}
@@ -249,9 +251,9 @@ const HomeApplianceComponent = () => {
               justifyContent: "center",
             }}
           >
-            <ImageWrapper>
-              <TopImage src="tv.jpg" alt="Appliance Installation" />
-              <BottomImage src="ht.jpg" alt="Appliance Maintenance" />
+            <ImageWrapper >
+              <TopImage src="tv1.png" alt="Appliance Installation" />
+              <BottomImage src="wm1.png" alt="Appliance Maintenance" />
             </ImageWrapper>
           </Grid>
         </Grid>
