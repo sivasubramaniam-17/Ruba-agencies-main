@@ -6,13 +6,13 @@ import { useSwipeable } from "react-swipeable";
 // Image Data with Captions
 const images = [
   {
-    src: "3.jpg",
+    src: "istockphoto-928084690-612x612.jpg",
     alt: "Refrigerator Installation",
     heading: "Refrigerator Installation",
     caption: "Expert refrigerator installation for reliable cooling and storage.",
   },
   {
-    src: "2.jpg",
+    src: "istockphoto-2161974641-612x612.jpg",
     alt: "Air Conditioner Setup",
     heading: "Air Conditioner Installation",
     caption: "Stay cool with professional AC installation services.",
@@ -23,12 +23,7 @@ const images = [
     heading: "Washing Machine Installation",
     caption: "Efficient washing machine setup for hassle-free laundry days.",
   },
-  {
-    src: "4.jpg",
-    alt: "Microwave Setup",
-    heading: "Microwave Installation",
-    caption: "Seamless microwave setup for quick and easy cooking.",
-  },
+
   {
     src: "tv.jpg",
     alt: "Television Wall Mount",
